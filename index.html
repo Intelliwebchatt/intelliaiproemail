@@ -1,352 +1,216 @@
-function_calls>
-<invoke name="artifacts">
-<parameter name="id">trap-ai-landing</parameter>
-<parameter name="type">text/html</parameter>
-<parameter name="content"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Trap AI - Next Level Automation</title>
-    <style>
-        :root {
-            --brand-primary: #000000;
-            --brand-secondary: #1a1a1a;
-            --brand-gold: #FFD700;
-            --brand-ice: #E0FFFF;
-            --gradient-hero: linear-gradient(
-                135deg,
-                #000000 0%,
-                #1a1a1a 50%,
-                #2d2d2d 100%
-            );
-            --gradient-gold: linear-gradient(
-                45deg,
-                #FFD700 0%,
-                #FDB931 50%,
-                #FFD700 100%
-            );
-            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: white;
-            background: #000000;
-        }
-
-        /* Enhanced Logo */
-        .logo {
-            font-size: 5.5rem;
-            font-weight: 900;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 
-                2px 2px 0 rgba(0,0,0,0.2),
-                4px 4px 0 rgba(0,0,0,0.1);
-            letter-spacing: -0.02em;
-            display: block;
-            margin-bottom: 2rem;
-            position: relative;
-            animation: iceGlow 3s ease-in-out infinite;
-        }
-
-        .logo span {
-            background: linear-gradient(
-                135deg,
-                var(--brand-ice) 0%,
-                #ffffff 50%,
-                var(--brand-ice) 100%
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        @keyframes iceGlow {
-            0%, 100% {
-                filter: drop-shadow(0 0 20px rgba(224, 255, 255, 0.3));
-            }
-            50% {
-                filter: drop-shadow(0 0 30px rgba(224, 255, 255, 0.5));
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background: var(--gradient-hero);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(224, 255, 255, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: var(--brand-ice);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Sound Wave Effect */
-        .wave-strip {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: rgba(255, 215, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .wave-bars {
-            display: flex;
-            align-items: center;
-            gap: 3px;
-            animation: slideWave 20s linear infinite;
-            white-space: nowrap;
-        }
-
-        .wave-bar {
-            width: 3px;
-            height: 30px;
-            background: var(--brand-gold);
-            animation: equalize 1s ease-in-out infinite;
-            border-radius: 2px;
-        }
-
-        .wave-bar:nth-child(2n) { 
-            animation-delay: 0.1s;
-            height: 40px;
-        }
-        .wave-bar:nth-child(3n) { 
-            animation-delay: 0.2s;
-            height: 25px;
-        }
-        .wave-bar:nth-child(4n) { 
-            animation-delay: 0.3s;
-            height: 35px;
-        }
-
-        @keyframes equalize {
-            0%, 100% { transform: scaleY(1); }
-            50% { transform: scaleY(0.7); }
-        }
-
-        @keyframes slideWave {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Pricing Cards */
-        .pricing {
-            padding: 6rem 2rem;
-            background: #000000;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .pricing-card {
-            background: var(--gradient-hero);
-            border-radius: 15px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: var(--transition-smooth);
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-gold);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: left;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
-        }
-
-        .pricing-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .pricing-card h3 {
-            color: var(--brand-gold);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: var(--brand-ice);
-            margin: 1.5rem 0;
-            font-weight: bold;
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 2rem 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .features-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '💎';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 0.8rem;
-        }
-
-        /* Style the rest of your sections similarly */
-
-        @media (max-width: 768px) {
-            .logo { font-size: 3.5rem; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .wave-strip { height: 60px; }
-        }
-    </style>
+    <title>Street Hustle Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="hero">
-        <div class="hero__content">
-            <h1 class="logo">Digital<span>Trap</span></h1>
-            <h2>Next Level AI For The Streets</h2>
-            <p>Your 24/7 digital manager. Handling the business while you handle the music. No cap. 💯</p>
-            <a href="#pricing" class="cta-button">Run It Up</a>
-        </div>
-        
-        <!-- Sound Wave Strip -->
-        <div class="wave-strip">
-            <div class="wave-bars">
-                <!-- 30 bars for animation -->
-                <div class="wave-bar"></div>
-                <!-- Repeat 29 more times -->
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <!-- ... continue for smooth look -->
-            </div>
-        </div>
-    </section>
+  <header class="hero-section">
+    <div class="content">
+      <h1 class="headline">GET THAT BAG, HOMIE</h1>
+      <p class="subheadline">Real Hustlers Only. Step Up or Step Out.</p>
+      <a href="#pricing" class="cta-button">Get In The Game</a>
+    </div>
+    <div class="wave-transition"></div>
+  </header>
 
-    <section id="pricing" class="pricing">
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Trap House Package</h3>
-                <div class="price">$150</div>
-                <ul class="features-list">
-                    <li>24/7 Fan Engagement Bot</li>
-                    <li>Smart DM Management</li>
-                    <li>Booking Request Filter</li>
-                    <li>Basic Deal Analysis</li>
-                    <li>Social Media Integration</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
+  <section id="pricing" class="pricing-section">
+    <div class="pricing-cards">
+      <!-- Example Pricing Card -->
+      <div class="pricing-card">
+        <h2>Starter Pack</h2>
+        <p class="price">$19/month</p>
+        <ul>
+          <li>Basic Game Plan</li>
+          <li>Community Access</li>
+          <li>Street-Level Insights</li>
+        </ul>
+        <a href="#" class="cta-button">Lock It In</a>
+      </div>
+      <div class="pricing-card">
+        <h2>Boss Moves</h2>
+        <p class="price">$49/month</p>
+        <ul>
+          <li>Advanced Tactics</li>
+          <li>Exclusive Meetups</li>
+          <li>One-on-One Mentoring</li>
+        </ul>
+        <a href="#" class="cta-button">Make Boss Moves</a>
+      </div>
+      <div class="pricing-card">
+        <h2>All In Package</h2>
+        <p class="price">$99/month</p>
+        <ul>
+          <li>Full Access to Everything</li>
+          <li>VIP Status</li>
+          <li>Lifetime Connections</li>
+        </ul>
+        <a href="#" class="cta-button">Go All In</a>
+      </div>
+    </div>
+    <div class="wave-transition"></div>
+  </section>
 
-            <div class="pricing-card">
-                <h3>Street Legend Package</h3>
-                <div class="price">$225/yr</div>
-                <ul class="features-list">
-                    <li>Everything in Trap House</li>
-                    <li>Deal Negotiation AI</li>
-                    <li>Brand Collab Filter</li>
-                    <li>Advanced Analytics</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="#contact" class="cta-button">Level Up</a>
-            </div>
+  <section class="contact-section">
+    <form class="contact-form">
+      <h2>Hit Us Up</h2>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit" class="cta-button">Send It</button>
+    </form>
+  </section>
 
-            <div class="pricing-card">
-                <h3>Empire Package</h3>
-                <div class="price">$240 + $150/yr</div>
-                <ul class="features-list">
-                    <li>Full AI Integration</li>
-                    <li>Custom Landing Page</li>
-                    <li>Tour Management</li>
-                    <li>Merch Drop Automation</li>
-                    <li>VIP Support</li>
-                </ul>
-                <a href="#contact" class="cta-button">Build Empire</a>
-            </div>
-
-            <div class="pricing-card">
-                <h3>GOAT Package</h3>
-                <div class="price">Custom</div>
-                <ul class="features-list">
-                    <li>Everything Customized</li>
-                    <li>Label Integration</li>
-                    <li>Multi-Artist Management</li>
-                    <li>Custom AI Training</li>
-                    <li>24/7 Priority Access</li>
-                </ul>
-                <a href="#contact" class="cta-button">Let's Talk</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Add Contact Form and Footer sections -->
-
+  <footer>
+    <p>&copy; 2024 Street Hustle Inc. All rights reserved.</p>
+  </footer>
 </body>
-</html></parameter>
-</invoke>
+</html>
+
+<style>
+  :root {
+    --spacing: 2rem;
+    --primary-color: #1a1a1a;
+    --secondary-color: #ff4500;
+    --highlight-color: #ffd700;
+    --font-color: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--font-color);
+  }
+
+  .hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    background: #000;
+  }
+
+  .headline {
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 0 4px 15px var(--shadow-color);
+    color: var(--highlight-color);
+  }
+
+  .subheadline {
+    font-size: 1.5rem;
+    margin-top: var(--spacing);
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .cta-button {
+    margin-top: var(--spacing);
+    padding: 1rem 2.5rem;
+    background: var(--highlight-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .cta-button:hover {
+    background: #e6b800;
+    box-shadow: 0 10px 20px var(--shadow-color);
+  }
+
+  .pricing-section {
+    padding: var(--spacing) calc(var(--spacing) * 2);
+    background: #111;
+    color: #ffd700;
+  }
+
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    flex-wrap: wrap;
+  }
+
+  .pricing-card {
+    background: #1a1a1a;
+    padding: var(--spacing);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    max-width: 300px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--highlight-color);
+  }
+
+  .wave-transition {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url('wave.svg') no-repeat;
+    background-size: cover;
+  }
+
+  .contact-form {
+    padding: var(--spacing);
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    color: #ffd700;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+  }
+
+  .contact-form label {
+    display: block;
+    margin: var(--spacing) 0 0.5rem;
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: var(--spacing);
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #333;
+    color: #ffd700;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    background: #ff6347;
+  }
+</style>
