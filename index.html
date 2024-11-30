@@ -22,7 +22,7 @@
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Hero Section with enhanced depth */
+        /* Hero Section with curved bottom */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -31,8 +31,9 @@
             background: var(--gradient-hero);
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 8rem;
             overflow: hidden;
+            clip-path: ellipse(100% 100% at 50% 0%);
         }
 
         .hero::before {
@@ -52,7 +53,7 @@
             opacity: 0.7;
         }
 
-        /* New Flowing Line Effect */
+        /* Updated wave transition for curved bottom */
         .wave-transition {
             position: absolute;
             bottom: 0;
@@ -61,6 +62,8 @@
             height: 2px;
             overflow: hidden;
             z-index: 2;
+            transform: translateY(-60px) scale(1.2);
+            opacity: 0.7;
         }
 
         .flowing-line {
@@ -201,6 +204,9 @@
         .pricing {
             padding: 6rem 2rem;
             background: #f8fafc;
+            margin-top: -4rem;
+            position: relative;
+            z-index: 1;
         }
 
         .pricing h2 {
@@ -312,7 +318,7 @@
             margin-bottom: 3rem;
         }
 
-        /* Features Grid Layout - Matching pricing grid */
+        /* Features Grid Layout */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -370,18 +376,6 @@
         }
 
         /* Moving Background Graphics */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background: var(--gradient-hero);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            overflow: hidden;
-        }
-
         .floating-shapes {
             position: absolute;
             inset: 0;
@@ -456,12 +450,6 @@
             transform: scaleX(1);
         }
 
-        /* Button alignment fix */
-        .pricing-card {
-            display: flex;
-            flex-direction: column;
-        }
-
         .features-list {
             flex-grow: 1;
             margin: 2rem 0;
@@ -469,21 +457,6 @@
 
         .cta-button {
             margin-top: auto;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo {
-                font-size: 2.5rem;
-            }
         }
 
         .feature-card {
@@ -497,9 +470,6 @@
             color: var(--brand-primary);
             margin-bottom: 1rem;
         }
-
-        /* Contact Section */
-        .contact
 
         /* Contact Section */
         .contact {
@@ -531,7 +501,8 @@
         .form-group select {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #e2e8f0;
+
+        border: 1px solid #e2e8f0;
             border-radius: 0.5rem;
         }
 
@@ -562,6 +533,21 @@
             opacity: 0.95;
             max-width: 800px;
             margin: 0 auto 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
