@@ -1,134 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelliai Pro Series - AI-Powered Business Solutions</title>
-    <style>
-        /* Previous styles remain but we'll add/modify some */
-        
-        /* Add header styles */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header__logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .header__logo span {
-            color: var(--brand-accent);
-        }
-
-        /* Modified wave transition */
-        .wave-line {
-            position: absolute;
-            bottom: -50px; /* Extend below the hero section */
-            left: 0;
-            width: 100%;
-            height: 100px;
-            z-index: 10;
-            overflow: hidden;
-        }
-
-        .wave-path {
-            position: absolute;
-            width: 200%;
-            height: 100%;
-            background: none;
-            transform: translate3d(0, 0, 0);
-            animation: waveMove 10s linear infinite;
-        }
-
-        .wave-path::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                90deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.8) 50%,
-                rgba(255, 255, 255, 0) 100%
-            );
-            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z'/%3E%3C/svg%3E");
-            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z'/%3E%3C/svg%3E");
-            mask-size: 100% 100%;
-            -webkit-mask-size: 100% 100%;
-        }
-
-        @keyframes waveMove {
-            0% {
-                transform: translateX(-50%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* Add footer styles */
-        .footer {
-            background: var(--brand-dark);
-            color: white;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer__content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .footer__column h3 {
-            color: var(--brand-accent);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer__column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer__column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer__column ul li a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-
-        .footer__column ul li a:hover {
-            opacity: 1;
-        }
-
-        .footer__bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+255, 255, 255, 0.1);
             margin-top: 2rem;
             padding-top: 2rem;
             text-align: center;
@@ -136,29 +6,68 @@
             opacity: 0.8;
         }
 
-        @media (max-width: 768px) {
-            .footer__content {
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-grid,
+            .features-grid {
                 grid-template-columns: repeat(2, 1fr);
+                padding: 1rem;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
+            .pricing-grid,
+            .features-grid,
             .footer__content {
                 grid-template-columns: 1fr;
             }
-        }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
 
-        /* Adjust hero section for header */
-        .hero {
-            padding-top: 6rem; /* Add space for fixed header */
+            .hero {
+                padding-top: 8rem;
+            }
         }
-
-        /* Previous styles remain the same... */
-        [Previous styles...]
     </style>
 </head>
 <body>
-    <!-- Add Header -->
+    <!-- Header -->
     <header class="header">
         <a href="#" class="header__logo">
             Intelli<span>AI</span> Pro
@@ -181,16 +90,660 @@
             <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business</p>
             <a href="#pricing" class="cta-button">View Packages</a>
         </div>
-        <!-- Replace wave transition with new wavy line -->
         <div class="wave-line">
             <div class="wave-path"></div>
         </div>
     </section>
 
-    <!-- Previous sections remain the same... -->
-    [Previous sections...]
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price">$150<span class="period"> one-time</span></div>
+                    <ul class="features-list">
+                        <li>Custom responsive design</li>
+                        <li>Modern wave animations</li>
+                        <li>Contact form integration</li>
+                        <li>Mobile optimization</li>
+                        <li>Netlify setup assistance</li>
+                        <li>One round of revisions</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
 
-    <!-- Add Footer -->
+                <div class="pricing-card">
+                    <h3>AI Agent Basic</h3>
+                    <div class="price">$150<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom trained GPT-4 agent</li>
+                        <li>Branded avatar</li>
+                        <li>24/7 customer service</li>
+                        <li>Basic FAQ handling</li>
+                        <li>Two updates per year</li>
+                        <li>Lead capturing</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>AI Agent Premium</h3>
+                    <div class="price">$225<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Basic</li>
+                        <li>Complete chat logs</li>
+                        <li>Customer interaction reports</li>
+                        <li>Lead tracking</li>
+                        <li>Pattern analysis</li>
+                        <li>Customer feedback compilation</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Launch Bundle</h3>
+                    <div class="price">$240<span class="period"> + $150/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom landing page</li>
+                        <li>AI Agent Basic</li>
+                        <li>Full setup & integration</li>
+                        <li>Configuration assistance</li>
+                        <li>Unified support</li>
+                        <li>Best value package</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Our Solutions?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>24/7 Customer Service</h3>
+                    <p>Your AI agent works around the clock, providing instant responses to customer inquiries and capturing leads while you sleep.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Professional Design</h3>
+                    <p>Stand out with a custom-designed landing page featuring modern animations and responsive design that looks great on all devices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Affordable Solution</h3>
+                    <p>Get enterprise-level features at a fraction of the cost. No hidden fees, just straightforward pricing for powerful tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Easy Setup</h3>
+                    <p>We handle the technical details. Your landing page and AI agent can be up and running within days, not weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <form data-netlify="true" name="contact">
+                <h2>Get Started Today</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="package">Interested In</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select a package</option>
+                        <option value="landing-page">Landing Page</option>
+                        <option value="ai-basic">AI Agent Basic</option>
+                        <option value="ai-premium">AI Agent Premium</option>
+                        <option value="bundle">Launch Bundle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">Landing Pages</a></li>
+                    <li><a href="#">AI Agents</a></li>
+                    <li><a href="#">Integration</a></li>
+                    <li><a href="#">API Access</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>255, 255, 255, 0.1);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid,
+            .features-grid,
+            .footer__content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding-top: 8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="header__logo">
+            Intelli<span>AI</span> Pro
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="floating-shape shape1"></div>
+            <div class="floating-shape shape2"></div>
+            <div class="floating-shape shape3"></div>
+        </div>
+        <div class="hero__content">
+            <div class="logo-container">
+                <h1 class="logo">Intelli<span>AI</span></h1>
+                <span class="pro-badge">PRO</span>
+            </div>
+            <h2>Transform Your Business with AI-Powered Solutions</h2>
+            <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business</p>
+            <a href="#pricing" class="cta-button">View Packages</a>
+        </div>
+        <div class="wave-line">
+            <div class="wave-path"></div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price">$150<span class="period"> one-time</span></div>
+                    <ul class="features-list">
+                        <li>Custom responsive design</li>
+                        <li>Modern wave animations</li>
+                        <li>Contact form integration</li>
+                        <li>Mobile optimization</li>
+                        <li>Netlify setup assistance</li>
+                        <li>One round of revisions</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>AI Agent Basic</h3>
+                    <div class="price">$150<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom trained GPT-4 agent</li>
+                        <li>Branded avatar</li>
+                        <li>24/7 customer service</li>
+                        <li>Basic FAQ handling</li>
+                        <li>Two updates per year</li>
+                        <li>Lead capturing</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>AI Agent Premium</h3>
+                    <div class="price">$225<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Basic</li>
+                        <li>Complete chat logs</li>
+                        <li>Customer interaction reports</li>
+                        <li>Lead tracking</li>
+                        <li>Pattern analysis</li>
+                        <li>Customer feedback compilation</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Launch Bundle</h3>
+                    <div class="price">$240<span class="period"> + $150/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom landing page</li>
+                        <li>AI Agent Basic</li>
+                        <li>Full setup & integration</li>
+                        <li>Configuration assistance</li>
+                        <li>Unified support</li>
+                        <li>Best value package</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Our Solutions?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>24/7 Customer Service</h3>
+                    <p>Your AI agent works around the clock, providing instant responses to customer inquiries and capturing leads while you sleep.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Professional Design</h3>
+                    <p>Stand out with a custom-designed landing page featuring modern animations and responsive design that looks great on all devices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Affordable Solution</h3>
+                    <p>Get enterprise-level features at a fraction of the cost. No hidden fees, just straightforward pricing for powerful tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Easy Setup</h3>
+                    <p>We handle the technical details. Your landing page and AI agent can be up and running within days, not weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <form data-netlify="true" name="contact">
+                <h2>Get Started Today</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="package">Interested In</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select a package</option>
+                        <option value="landing-page">Landing Page</option>
+                        <option value="ai-basic">AI Agent Basic</option>
+                        <option value="ai-premium">AI Agent Premium</option>
+                        <option value="bundle">Launch Bundle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">Landing Pages</a></li>
+                    <li><a href="#">AI Agents</a></li>
+                    <li><a href="#">Integration</a></li>
+                    <li><a href="#">API Access</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+255, 255, 255, 0.1);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pricing-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid,
+            .features-grid,
+            .footer__content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding-top: 8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="header__logo">
+            Intelli<span>AI</span> Pro
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="floating-shape shape1"></div>
+            <div class="floating-shape shape2"></div>
+            <div class="floating-shape shape3"></div>
+        </div>
+        <div class="hero__content">
+            <div class="logo-container">
+                <h1 class="logo">Intelli<span>AI</span></h1>
+                <span class="pro-badge">PRO</span>
+            </div>
+            <h2>Transform Your Business with AI-Powered Solutions</h2>
+            <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business</p>
+            <a href="#pricing" class="cta-button">View Packages</a>
+        </div>
+        <div class="wave-line">
+            <div class="wave-path"></div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price">$150<span class="period"> one-time</span></div>
+                    <ul class="features-list">
+                        <li>Custom responsive design</li>
+                        <li>Modern wave animations</li>
+                        <li>Contact form integration</li>
+                        <li>Mobile optimization</li>
+                        <li>Netlify setup assistance</li>
+                        <li>One round of revisions</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>AI Agent Basic</h3>
+                    <div class="price">$150<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom trained GPT-4 agent</li>
+                        <li>Branded avatar</li>
+                        <li>24/7 customer service</li>
+                        <li>Basic FAQ handling</li>
+                        <li>Two updates per year</li>
+                        <li>Lead capturing</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>AI Agent Premium</h3>
+                    <div class="price">$225<span class="period">/year</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Basic</li>
+                        <li>Complete chat logs</li>
+                        <li>Customer interaction reports</li>
+                        <li>Lead tracking</li>
+                        <li>Pattern analysis</li>
+                        <li>Customer feedback compilation</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Launch Bundle</h3>
+                    <div class="price">$240<span class="period"> + $150/year</span></div>
+                    <ul class="features-list">
+                        <li>Custom landing page</li>
+                        <li>AI Agent Basic</li>
+                        <li>Full setup & integration</li>
+                        <li>Configuration assistance</li>
+                        <li>Unified support</li>
+                        <li>Best value package</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Our Solutions?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>24/7 Customer Service</h3>
+                    <p>Your AI agent works around the clock, providing instant responses to customer inquiries and capturing leads while you sleep.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Professional Design</h3>
+                    <p>Stand out with a custom-designed landing page featuring modern animations and responsive design that looks great on all devices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Affordable Solution</h3>
+                    <p>Get enterprise-level features at a fraction of the cost. No hidden fees, just straightforward pricing for powerful tools.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Easy Setup</h3>
+                    <p>We handle the technical details. Your landing page and AI agent can be up and running within days, not weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <form data-netlify="true" name="contact">
+                <h2>Get Started Today</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="package">Interested In</label>
+                    <select id="package" name="package" required>
+                        <option value="">Select a package</option>
+                        <option value="landing-page">Landing Page</option>
+                        <option value="ai-basic">AI Agent Basic</option>
+                        <option value="ai-premium">AI Agent Premium</option>
+                        <option value="bundle">Launch Bundle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__content">
             <div class="footer__column">
