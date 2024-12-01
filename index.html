@@ -11,9 +11,9 @@
         :root {
             --brand-primary: #0D0D0D; /* Very dark gray */
             --brand-secondary: #1A1A1A; /* Dark gray */
-            --brand-accent: #E5E5E5;    /* Light gray */
+            --brand-accent: #C0C0C0;    /* Silver */
             --brand-light: #FFFFFF;     /* White */
-            --highlight-color: #F39C12; /* Accent color for highlights */
+            --highlight-color: #C0C0C0; /* Silver for highlights */
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -60,7 +60,7 @@
             color: var(--highlight-color);
         }
 
-        /* New Hero Section */
+        /* Hero Section */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -68,33 +68,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: var(--gradient-hero);
+            background: var(--brand-primary);
             color: var(--brand-light);
             text-align: center;
             padding: 6rem 2rem;
             overflow: hidden;
-        }
-
-        /* Hero Background Elements */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
-            animation: rotateBG 60s linear infinite;
-            z-index: 0;
-        }
-
-        @keyframes rotateBG {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
         }
 
         .hero__content {
@@ -103,11 +81,10 @@
             max-width: 800px;
         }
 
-        /* New Logo Styling */
+        /* Logo Styling */
         .logo {
             font-size: 4rem;
             font-weight: 900;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--highlight-color);
             margin-bottom: 1.5rem;
         }
@@ -151,6 +128,83 @@
             height: 4px;
             background: var(--highlight-color);
             margin: 2rem auto;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--brand-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .period {
+            font-size: 1rem;
+            color: var(--brand-accent);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--brand-accent);
+        }
+
+        .features-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color);
+        }
+
+        /* Reuse CTA Button Style */
+        .pricing-card .cta-button {
+            margin-top: auto;
+            text-align: center;
         }
 
         /* Features Section */
@@ -197,67 +251,17 @@
             color: var(--brand-accent);
         }
 
-        /* New Section (e.g., Testimonials) */
-        .testimonials {
-            padding: 6rem 2rem;
-            background: var(--brand-secondary);
-            color: var(--brand-light);
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: var(--brand-primary);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card::before {
-            content: '“';
-            font-size: 5rem;
-            color: var(--highlight-color);
-            position: absolute;
-            top: -20px;
-            left: 20px;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--brand-accent);
-        }
-
-        .testimonial-card h3 {
-            font-size: 1.2rem;
-            color: var(--brand-light);
-        }
-
         /* Contact Section */
         .contact {
             padding: 6rem 2rem;
-            background: var(--brand-primary);
+            background: var(--brand-secondary);
             color: var(--brand-light);
         }
 
         .contact form {
             max-width: 600px;
             margin: 0 auto;
-            background: var(--brand-secondary);
+            background: var(--brand-primary);
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -280,7 +284,7 @@
             padding: 0.75rem;
             border: 1px solid var(--brand-accent);
             border-radius: 0.5rem;
-            background: var(--brand-primary);
+            background: var(--brand-secondary);
             color: var(--brand-light);
         }
 
@@ -291,7 +295,7 @@
 
         /* Footer */
         .footer {
-            background: var(--brand-secondary);
+            background: var(--brand-primary);
             color: var(--brand-light);
             padding: 4rem 2rem;
         }
@@ -324,7 +328,7 @@
         }
 
         .footer__bottom {
-            border-top: 1px solid var(--brand-primary);
+            border-top: 1px solid var(--brand-secondary);
             margin-top: 2rem;
             padding-top: 2rem;
             text-align: center;
@@ -356,51 +360,95 @@
     <section class="hero">
         <div class="hero__content">
             <h1 class="logo">Intelli<span>AI</span></h1>
-            <h2>Elevate Your Business with Cutting-Edge AI Solutions</h2>
-            <p>Unlock potential with custom AI agents and sleek landing pages designed to convert.</p>
+            <h2>Transform Your Business with AI-Powered Solutions</h2>
+            <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business.</p>
             <a href="#contact" class="cta-button">Get Started</a>
         </div>
         <div class="divider"></div>
     </section>
 
-    <!-- Features Section with Service Cards -->
-    <section class="features">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>Custom Landing Pages</h3>
-                <p>Create stunning, responsive landing pages tailored to your brand and audience.</p>
+    <!-- Pricing Section (Now comes before Features Section) -->
+    <section id="pricing" class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <!-- Pricing Cards with Corrected Content -->
+            <div class="pricing-card">
+                <h3>Landing Page</h3>
+                <div class="price">$150<span class="period"> one-time</span></div>
+                <ul class="features-list">
+                    <li>Custom responsive design</li>
+                    <li>Modern animations</li>
+                    <li>Contact form integration</li>
+                    <li>Mobile optimization</li>
+                    <li>Netlify setup assistance</li>
+                    <li>One round of revisions</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            <div class="service-card">
-                <h3>AI Chatbot Integration</h3>
-                <p>Enhance customer engagement with intelligent AI chatbots available 24/7.</p>
+
+            <div class="pricing-card">
+                <h3>AI Agent Basic</h3>
+                <div class="price">$150<span class="period">/year</span></div>
+                <ul class="features-list">
+                    <li>Custom trained GPT-4 agent</li>
+                    <li>Branded avatar</li>
+                    <li>24/7 customer service</li>
+                    <li>Basic FAQ handling</li>
+                    <li>Two updates per year</li>
+                    <li>Lead capturing</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            <div class="service-card">
-                <h3>Data Analytics</h3>
-                <p>Gain insights from customer interactions to drive business decisions.</p>
+
+            <div class="pricing-card">
+                <h3>AI Agent Premium</h3>
+                <div class="price">$225<span class="period">/year</span></div>
+                <ul class="features-list">
+                    <li>Everything in Basic</li>
+                    <li>Complete chat logs</li>
+                    <li>Customer interaction reports</li>
+                    <li>Lead tracking</li>
+                    <li>Pattern analysis</li>
+                    <li>Customer feedback compilation</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
-            <div class="service-card">
-                <h3>SEO Optimization</h3>
-                <p>Improve your online visibility and attract more organic traffic.</p>
+
+            <div class="pricing-card">
+                <h3>Launch Bundle</h3>
+                <div class="price">$240<span class="period"> + $150/year</span></div>
+                <ul class="features-list">
+                    <li>Custom landing page</li>
+                    <li>AI Agent Basic</li>
+                    <li>Full setup & integration</li>
+                    <li>Configuration assistance</li>
+                    <li>Unified support</li>
+                    <li>Best value package</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
         </div>
     </section>
 
-    <!-- New Section (e.g., Testimonials) -->
-    <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p>"IntelliAI Pro transformed our online presence. The AI chatbot has increased our customer satisfaction tremendously!"</p>
-                <h3>- Alex Johnson, CEO of TechWave</h3>
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Choose Our Solutions?</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>24/7 Customer Service</h3>
+                <p>Your AI agent works around the clock, providing instant responses to customer inquiries and capturing leads while you sleep.</p>
             </div>
-            <div class="testimonial-card">
-                <p>"Their landing page design boosted our conversion rates by 50%. Highly recommend their services."</p>
-                <h3>- Maria Gomez, Marketing Director at BrightIdeas</h3>
+            <div class="service-card">
+                <h3>Professional Design</h3>
+                <p>Stand out with a custom-designed landing page featuring modern animations and responsive design that looks great on all devices.</p>
             </div>
-            <div class="testimonial-card">
-                <p>"The data analytics provided invaluable insights that helped us tailor our services to our customers' needs."</p>
-                <h3>- Liam Smith, COO of FastTrack Solutions</h3>
+            <div class="service-card">
+                <h3>Affordable Solution</h3>
+                <p>Get enterprise-level features at a fraction of the cost. No hidden fees, just straightforward pricing for powerful tools.</p>
+            </div>
+            <div class="service-card">
+                <h3>Easy Setup</h3>
+                <p>We handle the technical details. Your landing page and AI agent can be up and running within days, not weeks.</p>
             </div>
         </div>
     </section>
