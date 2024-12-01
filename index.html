@@ -13,12 +13,7 @@
             --brand-secondary: #1A1A1A; /* Dark gray */
             --brand-accent: #E5E5E5;    /* Light gray */
             --brand-light: #FFFFFF;     /* White */
-            --gradient-hero: linear-gradient(
-                135deg,
-                #000000 0%,
-                #1A1A1A 50%,
-                #0D0D0D 100%
-            );
+            --highlight-color: #F39C12; /* Accent color for highlights */
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -62,7 +57,7 @@
         }
 
         .header__logo span {
-            color: var(--brand-accent);
+            color: var(--highlight-color);
         }
 
         /* New Hero Section */
@@ -113,7 +108,7 @@
             font-size: 4rem;
             font-weight: 900;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--brand-accent);
+            color: var(--highlight-color);
             margin-bottom: 1.5rem;
         }
 
@@ -138,7 +133,7 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: var(--brand-light);
+            background: var(--highlight-color);
             color: var(--brand-primary);
             text-decoration: none;
             border-radius: 0.5rem;
@@ -154,83 +149,8 @@
         .divider {
             width: 80px;
             height: 4px;
-            background: var(--brand-accent);
+            background: var(--highlight-color);
             margin: 2rem auto;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            background: var(--brand-secondary);
-            position: relative;
-            z-index: 1;
-            color: var(--brand-light);
-        }
-
-        .pricing h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: var(--brand-primary);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--brand-accent);
-        }
-
-        .price {
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .period {
-            font-size: 1rem;
-            color: var(--brand-accent);
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 1.5rem 0;
-            flex-grow: 1;
-        }
-
-        .features-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--brand-light);
-        }
-
-        .features-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--brand-accent);
         }
 
         /* Features Section */
@@ -246,7 +166,8 @@
             margin-bottom: 3rem;
         }
 
-        .features-grid {
+        /* Service Cards */
+        .service-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
@@ -254,29 +175,89 @@
             margin: 0 auto;
         }
 
-        .feature-card {
+        .service-card {
+            background: var(--brand-secondary);
             padding: 2rem;
             border-radius: 1rem;
-            background: var(--brand-secondary);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
         }
 
-        .feature-card h3 {
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .service-card p {
+            color: var(--brand-accent);
+        }
+
+        /* New Section (e.g., Testimonials) */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--brand-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            font-size: 5rem;
+            color: var(--highlight-color);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
             margin-bottom: 1rem;
             color: var(--brand-accent);
+        }
+
+        .testimonial-card h3 {
+            font-size: 1.2rem;
+            color: var(--brand-light);
         }
 
         /* Contact Section */
         .contact {
             padding: 6rem 2rem;
-            background: var(--brand-secondary);
+            background: var(--brand-primary);
             color: var(--brand-light);
         }
 
         .contact form {
             max-width: 600px;
             margin: 0 auto;
-            background: var(--brand-primary);
+            background: var(--brand-secondary);
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -299,7 +280,7 @@
             padding: 0.75rem;
             border: 1px solid var(--brand-accent);
             border-radius: 0.5rem;
-            background: var(--brand-secondary);
+            background: var(--brand-primary);
             color: var(--brand-light);
         }
 
@@ -310,7 +291,7 @@
 
         /* Footer */
         .footer {
-            background: var(--brand-primary);
+            background: var(--brand-secondary);
             color: var(--brand-light);
             padding: 4rem 2rem;
         }
@@ -326,7 +307,7 @@
         .footer__column h3 {
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            color: var(--brand-accent);
+            color: var(--highlight-color);
         }
 
         .footer__column ul li {
@@ -339,11 +320,11 @@
         }
 
         .footer__column ul li a:hover {
-            color: var(--brand-accent);
+            color: var(--highlight-color);
         }
 
         .footer__bottom {
-            border-top: 1px solid var(--brand-secondary);
+            border-top: 1px solid var(--brand-primary);
             margin-top: 2rem;
             padding-top: 2rem;
             text-align: center;
@@ -377,26 +358,50 @@
             <h1 class="logo">Intelli<span>AI</span></h1>
             <h2>Elevate Your Business with Cutting-Edge AI Solutions</h2>
             <p>Unlock potential with custom AI agents and sleek landing pages designed to convert.</p>
-            <a href="#pricing" class="cta-button">Explore Packages</a>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
         <div class="divider"></div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <h2>Transparent Pricing Tailored for You</h2>
-        <div class="pricing-grid">
-            <!-- Pricing Cards (unchanged content) -->
-            <!-- ... -->
+    <!-- Features Section with Service Cards -->
+    <section class="features">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Custom Landing Pages</h3>
+                <p>Create stunning, responsive landing pages tailored to your brand and audience.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Chatbot Integration</h3>
+                <p>Enhance customer engagement with intelligent AI chatbots available 24/7.</p>
+            </div>
+            <div class="service-card">
+                <h3>Data Analytics</h3>
+                <p>Gain insights from customer interactions to drive business decisions.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO Optimization</h3>
+                <p>Improve your online visibility and attract more organic traffic.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Why Choose IntelliAI Pro?</h2>
-        <div class="features-grid">
-            <!-- Feature Cards (unchanged content) -->
-            <!-- ... -->
+    <!-- New Section (e.g., Testimonials) -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"IntelliAI Pro transformed our online presence. The AI chatbot has increased our customer satisfaction tremendously!"</p>
+                <h3>- Alex Johnson, CEO of TechWave</h3>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their landing page design boosted our conversion rates by 50%. Highly recommend their services."</p>
+                <h3>- Maria Gomez, Marketing Director at BrightIdeas</h3>
+            </div>
+            <div class="testimonial-card">
+                <p>"The data analytics provided invaluable insights that helped us tailor our services to our customers' needs."</p>
+                <h3>- Liam Smith, COO of FastTrack Solutions</h3>
+            </div>
         </div>
     </section>
 
@@ -440,8 +445,42 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__content">
-            <!-- Footer Columns (unchanged content) -->
-            <!-- ... -->
+            <div class="footer__column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">Landing Pages</a></li>
+                    <li><a href="#">AI Agents</a></li>
+                    <li><a href="#">Integration</a></li>
+                    <li><a href="#">API Access</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer__bottom">
             <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
