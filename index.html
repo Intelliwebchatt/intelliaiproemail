@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Meta description for SEO -->
     <meta name="description" content="Transform your business with AI-powered solutions. Custom landing pages and intelligent AI agents that work 24/7 to grow your business.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliAI Pro Series - AI-Powered Business Solutions</title>
@@ -16,13 +17,21 @@
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: var(--brand-light);
+        }
+
         body {
             background-color: var(--brand-primary);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
+        /* Header styles */
         .header {
             position: fixed;
             top: 0;
@@ -37,7 +46,23 @@
             align-items: center;
         }
 
+        .header__logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brand-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header__logo span {
+            color: var(--highlight-color);
+        }
+
+        /* Hero Section */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -45,15 +70,49 @@
             align-items: center;
             background: var(--brand-primary);
             color: var(--brand-light);
-            padding: 6rem 2rem;
             text-align: center;
+            padding: 6rem 2rem;
+            overflow: hidden;
         }
 
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--highlight-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .logo span {
+            color: var(--brand-light);
+        }
+
+        /* Hero Headline */
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--brand-accent);
+        }
+
+        /* CTA Button */
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
             background: var(--highlight-color);
             color: var(--brand-primary);
+            text-decoration: none;
             border-radius: 0.5rem;
             font-weight: 600;
             transition: background var(--transition-smooth);
@@ -63,77 +122,420 @@
             background: var(--brand-accent);
         }
 
-        .footer {
-            background: #1a1a1a;
-            color: #ccc;
-            padding: 2rem 1rem;
-            text-align: center;
+        /* Decorative Divider */
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--highlight-color);
+            margin: 2rem auto;
         }
 
-        .footer__content {
-            max-width: 800px;
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--brand-primary);
+            color: var(--brand-light);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Service Cards */
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer__content h3 {
+        .service-card {
+            background: var(--brand-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
             color: var(--highlight-color);
+        }
+
+        .service-card p {
+            color: var(--brand-accent);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--brand-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 1rem;
+            color: var(--highlight-color);
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .footer__content ul {
+        .pricing-card .period {
+            font-size: 1rem;
+            color: var(--brand-accent);
+        }
+
+        .features-list {
             list-style: none;
-            padding: 0;
+            margin: 1.5rem 0;
+            flex-grow: 1;
         }
 
-        .footer__content ul li {
-            margin: 0.5rem 0;
+        .features-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--brand-accent);
         }
 
-        .footer__content ul li a {
-            color: #fff;
-            text-decoration: none;
+        .features-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color);
+        }
+
+        /* Reuse CTA Button Style */
+        .pricing-card .cta-button {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--brand-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--brand-accent);
+            border-radius: 0.5rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--brand-accent);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brand-primary);
+            color: var(--brand-light);
+            padding: 4rem 2rem;
+        }
+
+        .footer__content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer__column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: var(--highlight-color);
+        }
+
+        .footer__column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__column ul li a {
+            color: var(--brand-light);
             transition: color var(--transition-smooth);
         }
 
-        .footer__content ul li a:hover {
+        .footer__column ul li a:hover {
             color: var(--highlight-color);
         }
 
         .footer__bottom {
-            border-top: 1px solid #333;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            color: #888;
+            border-top: 1px solid var(--brand-secondary);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--brand-accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
-        <a href="#" class="header__logo">Intelli<span>AI</span></a>
+        <a href="#" class="header__logo">
+            Intelli<span>AI</span> Pro
+        </a>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Intelli<span>AI</span></h1>
-        <h2>Transform Your Business with AI-Powered Solutions</h2>
-        <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business.</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+        <div class="hero__content">
+            <h1 class="logo">Intelli<span>AI</span></h1>
+            <h2>Transform Your Business with AI-Powered Solutions</h2>
+            <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+        <div class="divider"></div>
     </section>
 
+    <!-- Features Section with Original Service Cards -->
+    <section class="features">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Landing Page</h3>
+                <p>Custom responsive design with modern animations and mobile optimization.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Agent Basic</h3>
+                <p>Custom trained GPT-4 agent with branded avatar and 24/7 customer service.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Agent Premium</h3>
+                <p>Everything in Basic plus complete chat logs, interaction reports, and lead tracking.</p>
+            </div>
+            <div class="service-card">
+                <h3>Launch Bundle</h3>
+                <p>Combines Landing Page and AI Agent Basic for full setup and integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <!-- Pricing Cards with Original Content -->
+            <div class="pricing-card">
+                <h3>Landing Page</h3>
+                <div class="price">$150<span class="period"> one-time</span></div>
+                <ul class="features-list">
+                    <li>Custom responsive design</li>
+                    <li>Modern animations</li>
+                    <li>Contact form integration</li>
+                    <li>Mobile optimization</li>
+                    <li>Netlify setup assistance</li>
+                    <li>One round of revisions</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>AI Agent Basic</h3>
+                <div class="price">$150<span class="period">/year</span></div>
+                <ul class="features-list">
+                    <li>Custom trained GPT-4 agent</li>
+                    <li>Branded avatar</li>
+                    <li>24/7 customer service</li>
+                    <li>Basic FAQ handling</li>
+                    <li>Two updates per year</li>
+                    <li>Lead capturing</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>AI Agent Premium</h3>
+                <div class="price">$225<span class="period">/year</span></div>
+                <ul class="features-list">
+                    <li>Everything in Basic</li>
+                    <li>Complete chat logs</li>
+                    <li>Customer interaction reports</li>
+                    <li>Lead tracking</li>
+                    <li>Pattern analysis</li>
+                    <li>Customer feedback compilation</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Launch Bundle</h3>
+                <div class="price">$240<span class="period"> + $150/year</span></div>
+                <ul class="features-list">
+                    <li>Custom landing page</li>
+                    <li>AI Agent Basic</li>
+                    <li>Full setup & integration</li>
+                    <li>Configuration assistance</li>
+                    <li>Unified support</li>
+                    <li>Best value package</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <form data-netlify="true" netlify-honeypot="bot-field" name="contact">
+            <!-- Hidden input for Netlify Forms -->
+            <input type="hidden" name="form-name" value="contact">
+            <!-- Honeypot field -->
+            <p class="hidden" style="display:none;">
+                <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+            </p>
+            <h2>Get in Touch</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <!-- Rest of the form fields -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="package">Interested In</label>
+                <select id="package" name="package" required>
+                    <option value="">Select a package</option>
+                    <option value="landing-page">Landing Page</option>
+                    <option value="ai-basic">AI Agent Basic</option>
+                    <option value="ai-premium">AI Agent Premium</option>
+                    <option value="bundle">Launch Bundle</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can we assist you?"></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__content">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            <div class="footer__column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">Landing Pages</a></li>
+                    <li><a href="#">AI Agents</a></li>
+                    <li><a href="#">Integration</a></li>
+                    <li><a href="#">API Access</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer__bottom">
             <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Chatbot -->
+    <!-- Chatbot Embedding Code -->
     <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="37221" defer></script>
 </body>
 </html>
