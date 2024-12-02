@@ -35,7 +35,6 @@ body {
     align-items: center;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -44,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url('./file-17wMGhbLmtd3gBEMuraKip.webp');
-    background-size: contain;
+    background-size: cover; /* Changed from 'contain' */
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.9);
