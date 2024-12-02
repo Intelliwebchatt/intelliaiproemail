@@ -44,10 +44,11 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url('./file-17wMGhbLmtd3gBEMuraKip.webp');
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
-    color: var(--brand-light);
     padding: 6rem 2rem;
     overflow: hidden;
 }
@@ -58,7 +59,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 
@@ -69,7 +70,8 @@ body {
 }
 
 .hero h2, .hero p {
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1rem;
 }
 
 .cta-button {
@@ -80,6 +82,7 @@ body {
     border-radius: 0.5rem;
     font-weight: 600;
     transition: background var(--transition-smooth);
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
