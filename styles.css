@@ -1,4 +1,3 @@
-/* Root Variables */
 :root {
     --brand-primary: #0D0D0D;
     --brand-secondary: #1A1A1A;
@@ -8,7 +7,7 @@
     --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* General Reset */
+/* Reset */
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
@@ -22,7 +21,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -45,6 +43,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('./file-17wMGhbLmtd3gBEMuraKip.webp');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -70,11 +69,9 @@ body {
 }
 
 .hero h2, .hero p {
-    color: var(--brand-light);
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* CTA Button */
 .cta-button {
     padding: 1rem 2rem;
     background: var(--highlight-color);
