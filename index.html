@@ -11,12 +11,11 @@
             --brand-secondary: #2C2C2C;
             --brand-accent: #C0C0C0;
             --brand-light: #FFFFFF;
-            --highlight-color: #C0C0C0;
+            --highlight-color: #333333;
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --gradient-dark: linear-gradient(to bottom, #212121, #2C2C2C);
         }
 
-        /* Reset styles */
         body, h1, h2, h3, p, ul, li, a {
             margin: 0;
             padding: 0;
@@ -30,7 +29,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Header styles */
         .header {
             position: fixed;
             top: 0;
@@ -48,8 +46,6 @@
         .header__logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--brand-light);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -59,7 +55,6 @@
             color: var(--highlight-color);
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -67,11 +62,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: var(--brand-primary);
-            color: var(--brand-light);
+            background: linear-gradient(rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)),
+                        url('./file-17wMGhbLmtd3gBEMuraKip.webp');
+            background-size: cover;
+            background-position: center;
             text-align: center;
             padding: 6rem 2rem;
-            overflow: hidden;
         }
 
         .hero__content {
@@ -103,17 +99,24 @@
             color: var(--brand-accent);
         }
 
-        /* Features Section */
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--highlight-color);
+            color: var(--brand-light);
+            border-radius: 0.25rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background var(--transition-smooth);
+        }
+
+        .cta-button:hover {
+            background: #404040;
+        }
+
         .features {
             padding: 6rem 2rem;
             background: var(--brand-primary);
-            color: var(--brand-light);
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
         }
 
         .service-cards {
@@ -136,26 +139,15 @@
             transform: translateY(-8px);
         }
 
-        /* CTA Button */
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--highlight-color);
-            color: var(--brand-primary);
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background var(--transition-smooth);
-        }
-
-        .cta-button:hover {
-            background: var(--brand-accent);
-        }
-
-        /* Pricing Section */
         .pricing {
             padding: 6rem 2rem;
             background: var(--brand-secondary);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .pricing-grid {
@@ -173,7 +165,10 @@
             transition: transform var(--transition-smooth);
         }
 
-        /* Contact Section */
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+
         .contact {
             padding: 6rem 2rem;
             background: var(--brand-secondary);
@@ -202,72 +197,20 @@
             color: var(--brand-light);
         }
 
-        /* Enhanced Footer */
         .footer {
             background: var(--brand-primary);
             color: var(--brand-light);
-            padding: 4rem 2rem;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--brand-accent), transparent);
+            padding: 2rem;
         }
 
         .footer__content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer__column h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            color: var(--highlight-color);
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        .footer__column h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: var(--highlight-color);
-            transition: width var(--transition-smooth);
-        }
-
-        .footer__column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer__column ul li a {
-            color: var(--brand-accent);
-            transition: all var(--transition-smooth);
-            position: relative;
-            padding-left: 0;
-        }
-
-        .footer__column ul li a:hover {
-            color: var(--brand-light);
-            padding-left: 20px;
+            text-align: center;
         }
 
         .footer__bottom {
-            border-top: 1px solid rgba(192, 192, 192, 0.1);
-            margin-top: 3rem;
-            padding-top: 2rem;
+            margin-top: 1.5rem;
             text-align: center;
             font-size: 0.9rem;
             color: var(--brand-accent);
@@ -276,21 +219,21 @@
         .footer__social {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 2rem;
+            margin-bottom: 1rem;
         }
 
         .footer__social a {
             color: var(--brand-accent);
+            font-size: 0.9rem;
             transition: all var(--transition-smooth);
         }
 
         .footer__social a:hover {
             color: var(--brand-light);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .logo {
                 font-size: 2.5rem;
@@ -300,13 +243,8 @@
                 font-size: 2rem;
             }
 
-            .footer__content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer__content {
+            .service-cards,
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -326,7 +264,6 @@
             <p>Custom landing pages and intelligent AI agents that work 24/7 to grow your business.</p>
             <a href="#contact" class="cta-button">Get Started</a>
         </div>
-        <div class="divider"></div>
     </section>
 
     <section class="features">
@@ -447,60 +384,18 @@
 
     <footer class="footer">
         <div class="footer__content">
-            <div class="footer__column</antArtifact>
-               <div class="footer__column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#press">Press Kit</a></li>
-                    <li><a href="#partners">Partners</a></li>
-                </ul>
-            </div>
-            <div class="footer__column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#landing-page">Landing Page</a></li>
-                    <li><a href="#ai-basic">AI Agent Basic</a></li>
-                    <li><a href="#ai-premium">AI Agent Premium</a></li>
-                    <li><a href="#bundle">Launch Bundle</a></li>
-                    <li><a href="#enterprise">Enterprise Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer__column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#help">Help Center</a></li>
-                    <li><a href="#documentation">Documentation</a></li>
-                    <li><a href="#api">API Reference</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#status">System Status</a></li>
-                </ul>
-            </div>
-            <div class="footer__column">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#security">Security</a></li>
-                    <li><a href="#compliance">Compliance</a></li>
-                    <li><a href="#cookies">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
             <div class="footer__social">
                 <a href="#twitter">Twitter</a>
                 <a href="#linkedin">LinkedIn</a>
                 <a href="#github">GitHub</a>
                 <a href="#discord">Discord</a>
             </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Chatbot Embedding Code -->
     <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="37221" defer></script>
 </body>
-</html> 
+</html>
