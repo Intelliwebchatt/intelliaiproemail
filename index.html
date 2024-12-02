@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta description for SEO -->
     <meta name="description" content="Transform your business with AI-powered solutions. Custom landing pages and intelligent AI agents that work 24/7 to grow your business.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliAI Pro Series - AI-Powered Business Solutions</title>
     <style>
-        /* Style variables */
         :root {
-            --brand-primary: #0D0D0D; /* Very dark gray */
-            --brand-secondary: #1A1A1A; /* Dark gray */
-            --brand-accent: #C0C0C0;    /* Silver */
-            --brand-light: #FFFFFF;     /* White */
-            --highlight-color: #C0C0C0; /* Silver for highlights */
+            --brand-primary: #212121;
+            --brand-secondary: #2C2C2C;
+            --brand-accent: #C0C0C0;
+            --brand-light: #FFFFFF;
+            --highlight-color: #C0C0C0;
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-dark: linear-gradient(to bottom, #212121, #2C2C2C);
         }
 
-        /* Reset some default styles */
+        /* Reset styles */
         body, h1, h2, h3, p, ul, li, a {
             margin: 0;
             padding: 0;
@@ -27,7 +26,7 @@
         }
 
         body {
-            background-color: var(--brand-primary);
+            background: var(--gradient-dark);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -38,7 +37,7 @@
             left: 0;
             right: 0;
             padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.9);
+            background: linear-gradient(to bottom, rgba(33, 33, 33, 0.95), rgba(33, 33, 33, 0.85));
             backdrop-filter: blur(8px);
             z-index: 1000;
             display: flex;
@@ -81,7 +80,6 @@
             max-width: 800px;
         }
 
-        /* Logo Styling */
         .logo {
             font-size: 4rem;
             font-weight: 900;
@@ -93,7 +91,6 @@
             color: var(--brand-light);
         }
 
-        /* Hero Headline */
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -104,6 +101,39 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             color: var(--brand-accent);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--brand-primary);
+            color: var(--brand-light);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--brand-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
         }
 
         /* CTA Button */
@@ -122,69 +152,10 @@
             background: var(--brand-accent);
         }
 
-        /* Decorative Divider */
-        .divider {
-            width: 80px;
-            height: 4px;
-            background: var(--highlight-color);
-            margin: 2rem auto;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            background: var(--brand-primary);
-            color: var(--brand-light);
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Service Cards */
-        .service-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--brand-secondary);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--highlight-color);
-        }
-
-        .service-card p {
-            color: var(--brand-accent);
-        }
-
         /* Pricing Section */
         .pricing {
             padding: 6rem 2rem;
             background: var(--brand-secondary);
-            color: var(--brand-light);
-        }
-
-        .pricing h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
         }
 
         .pricing-grid {
@@ -199,63 +170,13 @@
             background: var(--brand-primary);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .pricing-card h3 {
-            margin-bottom: 1rem;
-            color: var(--highlight-color);
-        }
-
-        .pricing-card .price {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-card .period {
-            font-size: 1rem;
-            color: var(--brand-accent);
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 1.5rem 0;
-            flex-grow: 1;
-        }
-
-        .features-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--brand-accent);
-        }
-
-        .features-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--highlight-color);
-        }
-
-        /* Reuse CTA Button Style */
-        .pricing-card .cta-button {
-            margin-top: auto;
-            text-align: center;
+            transition: transform var(--transition-smooth);
         }
 
         /* Contact Section */
         .contact {
             padding: 6rem 2rem;
             background: var(--brand-secondary);
-            color: var(--brand-light);
         }
 
         .contact form {
@@ -264,17 +185,10 @@
             background: var(--brand-primary);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
         }
 
         .form-group input,
@@ -288,52 +202,92 @@
             color: var(--brand-light);
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--brand-accent);
-        }
-
-        /* Footer */
+        /* Enhanced Footer */
         .footer {
             background: var(--brand-primary);
             color: var(--brand-light);
             padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--brand-accent), transparent);
         }
 
         .footer__content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
         }
 
         .footer__column h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.2rem;
             color: var(--highlight-color);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer__column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--highlight-color);
+            transition: width var(--transition-smooth);
         }
 
         .footer__column ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .footer__column ul li a {
-            color: var(--brand-light);
-            transition: color var(--transition-smooth);
+            color: var(--brand-accent);
+            transition: all var(--transition-smooth);
+            position: relative;
+            padding-left: 0;
         }
 
         .footer__column ul li a:hover {
-            color: var(--highlight-color);
+            color: var(--brand-light);
+            padding-left: 20px;
         }
 
         .footer__bottom {
-            border-top: 1px solid var(--brand-secondary);
-            margin-top: 2rem;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+            margin-top: 3rem;
             padding-top: 2rem;
             text-align: center;
             font-size: 0.9rem;
             color: var(--brand-accent);
+        }
+
+        .footer__social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer__social a {
+            color: var(--brand-accent);
+            transition: all var(--transition-smooth);
+        }
+
+        .footer__social a:hover {
+            color: var(--brand-light);
+            transform: translateY(-3px);
         }
 
         /* Responsive Design */
@@ -345,18 +299,26 @@
             .hero h2 {
                 font-size: 2rem;
             }
+
+            .footer__content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer__content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <a href="#" class="header__logo">
             Intelli<span>AI</span> Pro
         </a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero__content">
             <h1 class="logo">Intelli<span>AI</span></h1>
@@ -367,7 +329,6 @@
         <div class="divider"></div>
     </section>
 
-    <!-- Features Section with Original Service Cards -->
     <section class="features">
         <h2>Our Services</h2>
         <div class="service-cards">
@@ -390,11 +351,9 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <h2>Simple, Transparent Pricing</h2>
         <div class="pricing-grid">
-            <!-- Pricing Cards with Original Content -->
             <div class="pricing-card">
                 <h3>Landing Page</h3>
                 <div class="price">$150<span class="period"> one-time</span></div>
@@ -453,21 +412,17 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <form data-netlify="true" netlify-honeypot="bot-field" name="contact">
-            <!-- Hidden input for Netlify Forms -->
             <input type="hidden" name="form-name" value="contact">
-            <!-- Honeypot field -->
             <p class="hidden" style="display:none;">
-                <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
             </p>
             <h2>Get in Touch</h2>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Your Name">
             </div>
-            <!-- Rest of the form fields -->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required placeholder="you@example.com">
@@ -490,9 +445,62 @@
         </form>
     </section>
 
-    
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__column</antArtifact>
+               <div class="footer__column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#press">Press Kit</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#landing-page">Landing Page</a></li>
+                    <li><a href="#ai-basic">AI Agent Basic</a></li>
+                    <li><a href="#ai-premium">AI Agent Premium</a></li>
+                    <li><a href="#bundle">Launch Bundle</a></li>
+                    <li><a href="#enterprise">Enterprise Solutions</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="#api">API Reference</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#status">System Status</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+            <div class="footer__social">
+                <a href="#twitter">Twitter</a>
+                <a href="#linkedin">LinkedIn</a>
+                <a href="#github">GitHub</a>
+                <a href="#discord">Discord</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Chatbot Embedding Code -->
     <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="37221" defer></script>
 </body>
-</html>
+</html> 
