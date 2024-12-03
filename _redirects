@@ -1,2 +1,2 @@
 # Redirect www to non-www
-https://www.yourdomain.com/* https://yourdomain.com/:splat 301!
+https://wwwintelliaipro.com/* https://yourdomain.com/:splat 301!
