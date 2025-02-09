@@ -67,86 +67,38 @@
             color: var(--red-highlight);
         }
 
+        .intro-section {
+            text-align: center;
+            padding: 2rem;
+            background: var(--brand-secondary);
+            color: var(--brand-light);
+            border-bottom: 2px solid var(--red-highlight);
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section p, .intro-section ul {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
         .cta-button {
             display: inline-block;
-            padding: 1.5rem 3rem;
+            padding: 1rem 2rem;
             background: var(--highlight-color);
             color: var(--brand-light);
             border-radius: 0.5rem;
-            font-weight: 700;
-            font-size: 1.5rem;
-            transition: background var(--transition-smooth), border 0.3s ease;
-            margin-top: 1.5rem;
-            border: 2px solid transparent;
+            font-weight: bold;
+            transition: background var(--transition-smooth);
+            margin-top: 1rem;
         }
 
         .cta-button:hover {
-            background: #404040;
-            border-color: var(--red-highlight);
-        }
-
-        .service-card, .intellichatt-link {
-            background: var(--brand-secondary);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            transition: transform var(--transition-smooth), border 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
-            text-align: center;
-        }
-
-        .service-card:hover, .intellichatt-link:hover {
-            transform: translateY(-10px);
-            border-color: var(--red-highlight);
-        }
-
-        .features {
-            background: var(--brand-primary);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .service-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .service-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .intellichatt-link {
-                grid-column: 2 / 3;
-            }
-        }
-
-        form {
-            background: var(--brand-secondary);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 400px;
-            margin: 0 auto;
-            color: var(--brand-light);
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
-        }
-
-        form label {
-            display: block;
-            margin: 0.5rem 0;
-            font-weight: bold;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--brand-accent);
-            border-radius: 0.5rem;
-            background: var(--brand-secondary);
-            color: var(--brand-light);
-            margin-bottom: 1rem;
+            background: var(--red-highlight);
         }
 
         footer {
@@ -162,10 +114,6 @@
             gap: 15px;
             margin-bottom: 0.5rem;
         }
-
-        footer p {
-            margin: 0;
-        }
     </style>
 </head>
 <body>
@@ -178,54 +126,20 @@
         </nav>
     </header>
 
-    <section id="services" class="features">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <a href="#contact" class="service-card">
-                <h3>Landing Page</h3>
-                <p>Custom responsive design with modern animations and mobile optimization.</p>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3>AI Agent Basic</h3>
-                <p>Custom trained GPT-4 agent with branded avatar and 24/7 customer service.</p>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3>AI Agent Premium</h3>
-                <p>Everything in Basic plus complete chat logs, interaction reports, and lead tracking.</p>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3>Web App Development</h3>
-                <p>High-performance, scalable web applications tailored to your business needs.</p>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3>API Integrations</h3>
-                <p>Seamless API integrations to connect your systems and enhance functionality.</p>
-            </a>
-            <a href="#contact" class="service-card">
-                <h3>Mobile App Development</h3>
-                <p>Custom mobile applications for both Play Store and Apple Store, optimized for performance and user experience.</p>
-            </a>
-        </div>
-
-        <div class="intellichatt-link">
-            <h3>IntelliChatt</h3>
-            <p>IntelliChatt is the very popular deception detection app that is created and owned by IntelliAI Pro.</p>
-            <a href="https://intellichatt.com" target="_blank" class="cta-button">Visit IntelliChatt</a>
-        </div>
-    </section>
-
-    <section id="contact" class="features">
-        <h2>Contact Us</h2>
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit" class="cta-button">Send</button>
-        </form>
+    <section class="intro-section">
+        <h2>Empowering Businesses with AI-Driven Solutions</h2>
+        <p>At IntelliAI Pro, we harness the power of advanced AI technologies to transform the way businesses operate. Whether you need a dynamic landing page, intelligent AI agents, or robust web and mobile applications, we provide solutions designed to enhance efficiency, capture leads, and deliver exceptional customer experiences.</p>
+        <p>Our services go beyond traditional automation. With custom-trained GPT-4 agents, seamless API integrations, and scalable web and mobile app development, we help businesses of all sizes streamline operations and stay ahead in an AI-driven world.</p>
+        <h3>Why Choose IntelliAI Pro?</h3>
+        <ul>
+            <li>Custom AI Solutions: Tailored to meet your business needs.</li>
+            <li>24/7 Customer Support: Intelligent AI agents that never sleep.</li>
+            <li>Scalable Technology: From startups to enterprises, we grow with you.</li>
+            <li>Data-Driven Insights: Actionable reports and analytics to track performance.</li>
+        </ul>
+        <p>Ready to elevate your business with smart technology?</p>
+        <h3>Let’s Build the Future Together.</h3>
+        <a href="#contact" class="cta-button">Get Started Today</a>
     </section>
 
     <footer>
