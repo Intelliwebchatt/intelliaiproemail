@@ -104,6 +104,16 @@
             margin: 2rem 0;
         }
 
+        @media (min-width: 768px) {
+            .service-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .intellichatt-link {
+                grid-column: 2 / 3;
+            }
+        }
+
         .service-card {
             background: var(--brand-primary);
             padding: 1.5rem;
