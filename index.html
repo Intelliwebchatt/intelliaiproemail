@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Transform your business with AI-powered solutions. Custom landing pages, intelligent AI agents, web apps, API integrations, and mobile apps for Play Store & Apple Store.">
+    <meta name="keywords" content="AI, Business Solutions, Web Development, Mobile Apps, API Integration, AI Agents">
+    <meta name="author" content="IntelliAI Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.intelliai-pro.com/">
+    <meta property="og:title" content="IntelliAI Pro Series - AI-Powered Business Solutions">
+    <meta property="og:description" content="Transform your business with AI-powered solutions. Custom landing pages, intelligent AI agents, web apps, API integrations, and mobile apps for Play Store & Apple Store.">
+    <meta property="og:image" content="https://www.intelliai-pro.com/og-image.jpg">
+    <meta property="og:url" content="https://www.intelliai-pro.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
     <title>IntelliAI Pro Series - AI-Powered Business Solutions</title>
     <style>
         :root {
-            --brand-primary: #212121;
-            --brand-secondary: #2C2C2C;
+            --brand-primary: #000000;
+            --brand-secondary: #1A1A1A;
             --brand-accent: #C0C0C0;
             --brand-light: #FFFFFF;
             --highlight-color: #333333;
             --red-highlight: #FF0000;
             --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --gradient-dark: linear-gradient(to bottom, #212121, #2C2C2C);
         }
 
         body, h1, h2, h3, p, ul, li, a {
@@ -26,8 +34,19 @@
         }
 
         body {
-            background: var(--gradient-dark);
+            background: var(--brand-primary);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header, footer {
+            background: var(--brand-primary);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: var(--brand-light);
         }
 
         .cta-button {
@@ -48,51 +67,23 @@
             border-color: var(--red-highlight);
         }
 
-        .intellichatt-link {
-            margin: 2rem auto 0;
-            max-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .service-card, .intellichatt-link {
             background: var(--brand-secondary);
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 0.5rem;
             transition: transform var(--transition-smooth), border 0.3s ease;
             border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+            text-align: center;
         }
 
-        .intellichatt-link:hover {
+        .service-card:hover, .intellichatt-link:hover {
             transform: translateY(-10px);
             border-color: var(--red-highlight);
         }
 
-        .intellichatt-link a {
-            color: var(--brand-light);
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-
-        .intellichatt-link p {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            color: var(--brand-accent);
-        }
-
-        .lie-to-me {
-            color: var(--red-highlight);
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
-        }
-
-        .hero {
-            background: url('your-image-path.jpg') no-repeat center center/cover;
-            padding: 8rem 2rem;
-            text-align: center;
-        }
-
         .features {
-            background: var(--brand-secondary);
+            background: var(--brand-primary);
             padding: 4rem 2rem;
             text-align: center;
         }
@@ -114,61 +105,44 @@
             }
         }
 
-        .service-card {
-            background: var(--brand-primary);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            transition: transform var(--transition-smooth), border 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--red-highlight);
-        }
-
         form {
-            background: var(--brand-primary);
+            background: var(--brand-secondary);
             padding: 2rem;
             border-radius: 0.5rem;
             max-width: 400px;
             margin: 0 auto;
+            color: var(--brand-light);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
         }
 
         form label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin: 0.5rem 0;
             font-weight: bold;
         }
 
         form input, form textarea {
             width: 100%;
             padding: 0.75rem;
-            margin-bottom: 1rem;
             border: 1px solid var(--brand-accent);
             border-radius: 0.5rem;
             background: var(--brand-secondary);
             color: var(--brand-light);
-        }
-
-        .footer {
-            background: var(--brand-primary);
-            padding: 2rem 0;
-            text-align: center;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero__content">
-            <h1 class="logo">Intelli<span style="color: var(--red-highlight);">AI</span></h1>
-            <h2>Transform Your Business with AI-Powered Solutions</h2>
-            <p>Custom landing pages, intelligent AI agents, web apps, API integrations, and mobile apps for Play Store & Apple Store.</p>
-            <a href="#contact" class="cta-button">Get Started</a>
-        </div>
-    </section>
+    <header>
+        <h1>IntelliAI Pro</h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://intellichatt.com" target="_blank">IntelliChatt</a>
+        </nav>
+    </header>
 
-    <section class="features">
+    <section id="services" class="features">
         <h2>Our Services</h2>
         <div class="service-cards">
             <a href="#contact" class="service-card">
@@ -196,10 +170,11 @@
                 <p>Custom mobile applications for both Play Store and Apple Store, optimized for performance and user experience.</p>
             </a>
         </div>
+
         <div class="intellichatt-link">
-            <a href="https://intellichatt.com" target="_blank">Visit IntelliChatt</a>
-            <p class="lie-to-me">LIE TO ME!</p>
-            <p>Developed by IntelliAI Pro</p>
+            <h3>IntelliChatt</h3>
+            <p>IntelliChatt is the very popular deception detection app that is created and owned by IntelliAI Pro.</p>
+            <a href="https://intellichatt.com" target="_blank" class="cta-button">Visit IntelliChatt</a>
         </div>
     </section>
 
@@ -207,35 +182,23 @@
         <h2>Contact Us</h2>
         <form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
             <button type="submit" class="cta-button">Send</button>
         </form>
     </section>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__social">
-                <a href="#twitter">Twitter</a>
-                <a href="#linkedin">LinkedIn</a>
-                <a href="#github">GitHub</a>
-                <a href="#discord">Discord</a>
-                <a href="#facebook">Facebook</a>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://intellichatt.com" target="_blank">IntelliChatt</a>
+        </nav>
     </footer>
 </body>
 </html>
