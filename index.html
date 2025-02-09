@@ -38,15 +38,33 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        header, footer {
+        header {
             background: var(--brand-primary);
             padding: 1rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--red-highlight);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--red-highlight);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
-            margin: 0 15px;
             color: var(--brand-light);
+            font-weight: bold;
+            transition: color var(--transition-smooth);
+        }
+
+        nav a:hover {
+            color: var(--red-highlight);
         }
 
         .cta-button {
