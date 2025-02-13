@@ -1,51 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelligent AI Agents - IntelliAI Pro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent AI Agents - IntelliAI Pro</title>
+  <style>
+    /* Mobile-first Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+    }
+    
+    /* Hamburger Menu */
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .menu-toggle .hamburger {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      display: block;
+    }
+    
+    /* Navigation Menu */
+    .nav-menu {
+      display: none;
+      padding: 0 1rem 1rem;
+    }
+    
+    .nav-menu.active {
+      display: block;
+    }
+    
+    .nav-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .nav-menu li {
+      margin: 0.5rem 0;
+    }
+    
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    /* Section Styling */
+    .service-detail-intro {
+      padding: 1rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: #007BFF;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: #f8f8f8;
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+    
+    footer nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    footer nav li {
+      display: inline;
+      margin: 0 0.5rem;
+    }
+    
+    footer a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    /* Larger Screens */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      .header-container {
+        padding: 1rem 2rem;
+      }
+      .nav-menu {
+        display: block;
+        padding: 0;
+      }
+      .nav-menu ul {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .nav-menu li {
+        margin: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>IntelliAI Pro</h1>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/index.html#services">Services</a>
-            <a href="/index.html#contact">Contact</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/faq.html">FAQ</a>
-            <a href="https://intellichatt.com" target="_blank">IntelliChatt</a>
-        </nav>
-    </header>
+  <header>
+    <div class="header-container">
+      <h1>IntelliAI Pro</h1>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#services">Services</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="https://intellichatt.com" target="_blank">IntelliChatt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="service-detail-intro">
-        <h2>Intelligent AI Agents</h2>
-        <p>Revolutionize your customer service and internal operations with IntelliAI Pro's Intelligent AI Agents. These aren't just chatbots; they are sophisticated AI systems designed to understand, learn, and interact in a human-like manner. Our AI Agents can handle a wide range of tasks, from answering customer queries to automating routine business processes, all while providing 24/7 availability and consistent performance.</p>
+  <section class="service-detail-intro">
+    <h2>Intelligent AI Agents</h2>
+    <p>
+      Revolutionize your customer service and internal operations with IntelliAI Pro's Intelligent AI Agents.
+      These aren't just chatbots; they are sophisticated AI systems designed to understand, learn, and interact
+      in a human-like manner. Our AI Agents can handle a wide range of tasks, from answering customer queries
+      to automating routine business processes, all while providing 24/7 availability and consistent performance.
+    </p>
 
-        <h3>Key Features of IntelliAI Agents:</h3>
-        <ul>
-            <li><b>24/7 Customer Support:</b> Provide instant responses to customer inquiries at any time, improving satisfaction and reducing wait times.</li>
-            <li><b>Task Automation:</b> Automate repetitive tasks such as scheduling, data entry, and initial customer qualification, freeing up your team for more strategic work.</li>
-            <li><b>Personalized Interactions:</b> AI Agents can learn customer preferences and tailor interactions, enhancing engagement and loyalty.</li>
-            <li><b>Seamless Integration:</b> Integrate AI Agents into your website, mobile apps, and other platforms for a unified customer experience.</li>
-            <li><b>Data-Driven Insights:</b> Gain valuable insights from AI Agent interactions to understand customer needs and improve service delivery.</li>
-        </ul>
+    <h3>Key Features of IntelliAI Agents:</h3>
+    <ul>
+      <li><strong>24/7 Customer Support:</strong> Provide instant responses to customer inquiries at any time, improving satisfaction and reducing wait times.</li>
+      <li><strong>Task Automation:</strong> Automate repetitive tasks such as scheduling, data entry, and initial customer qualification, freeing up your team for more strategic work.</li>
+      <li><strong>Personalized Interactions:</strong> AI Agents can learn customer preferences and tailor interactions, enhancing engagement and loyalty.</li>
+      <li><strong>Seamless Integration:</strong> Integrate AI Agents into your website, mobile apps, and other platforms for a unified customer experience.</li>
+      <li><strong>Data-Driven Insights:</strong> Gain valuable insights from AI Agent interactions to understand customer needs and improve service delivery.</li>
+    </ul>
 
-        <p>Deploy IntelliAI Agents to transform how your business communicates and operates, leading to increased efficiency, reduced costs, and happier customers.</p>
+    <p>
+      Deploy IntelliAI Agents to transform how your business communicates and operates, leading to increased efficiency,
+      reduced costs, and happier customers.
+    </p>
 
-        <a href="/index.html#contact" class="cta-button">Get Started Today</a>
-    </section>
+    <a href="/index.html#contact" class="cta-button">Get Started Today</a>
+  </section>
 
-    <footer>
-        <nav>
-            <a href="/index.html#services">Services</a>
-            <a href="/index.html#contact">Contact</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/faq.html">FAQ</a>
-            <a href="https://intellichatt.com" target="_blank">IntelliChatt</a>
-        </nav>
-        <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
-    </footer>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="/index.html#services">Services</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="https://intellichatt.com" target="_blank">IntelliChatt</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2024 IntelliAI Pro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
